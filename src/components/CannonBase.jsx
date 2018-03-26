@@ -1,19 +1,16 @@
 import React from 'react';
-import { pathFromBezierCurve} from '../utils/formulas'
-
-
+import { pathFromBezierCurve } from '../utils/formulas';
 const CannonBase = (props) => {
     const cannonBaseStyle = {
         fill: '#a16012',
-        srtoke: '#75450e',
+        stroke: '#75450e',
         strokeWidth: '2px',
     };
 
-    const basewWidth = 80;
-    const halfBase = basewWidth / 2;
+    const baseWith = 80;
+    const halfBase = 40;
     const height = 60;
-    const negatibeHeight = height * -1;
-
+    const negativeHeight = height * -1;
     const cubicBezierCurve = {
         initialAxis: {
             x: -halfBase,
@@ -21,33 +18,33 @@ const CannonBase = (props) => {
         },
         initialControlPoint: {
             x: 20,
-            y: negatibeHeight,
+            y: negativeHeight,
         },
-        endingControlPoinr: {
+        endingControlPoint: {
             x: 60,
-            y: negatibeHeight,
+            y: negativeHeight,
         },
         endingAxis: {
-            x: basewWidth,
+            x: baseWith,
             y: 0,
         },
-        
     };
-
     return (
         <g>
             <path
-                style = {cannonBaseStyle}
-                d = {pathFromBezierCurve(cubicBezierCurve)}
+                style={cannonBaseStyle}
+                d={pathFromBezierCurve(cubicBezierCurve)}
             />
             <line
-                x1 = {-halfBase}
-                y1 = {height}
-                x2 = {halfBase}
-                y2 = {height}
+                x1={-halfBase}
+                y1={height}
+                x2={halfBase}
+                y2={height}
+                style={cannonBaseStyle}
             />
         </g>
     );
 };
+
 
 export default CannonBase;
