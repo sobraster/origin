@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import Canvas from './components/Canvas'; 
 
 
 class App extends Component {
+  propTypes = {
+    message: PropTypes.string.isRequired,
+  };
   render() {
-    return (
-      <div className="App">
-        <h1>We will create an awesome game with React, Redux, and SVG!</h1>
-      </div>
+    return (      
+      <Canvas />      
     );
   }
 }
+
+// App.propTypes = {
+//   message: PropTypes.string.isRequired,
+// };
 
 export default App;
