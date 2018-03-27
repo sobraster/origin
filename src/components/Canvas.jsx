@@ -5,7 +5,7 @@ import Ground from './Ground';
 import CannonBase from './CannonBase';
 import CannonPipe from './CannonPipe';
 import CannonBall from './CannonBall';
-import CurrentScore from './CurrenScore';
+import CurrentScore from './CurrentScore';
 
 
 const Canvas = (props) => {
@@ -18,11 +18,6 @@ const Canvas = (props) => {
       onMouseMove={props.trackMouse}
       viewBox = {viewBox}
     >
-      <defs>
-        <filter>
-          <feDropShadow dx="1" dy="1" stdDeviation="2" />  
-        </filter>
-      </defs>
       <Sky />
       <Ground />
       <CannonPipe rotation={props.angle}/>

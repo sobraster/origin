@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 const CurrentScore = (props) => {
     const scoreStyle = {
+        fontFamily: '',
         fontsize: 90,
         fill: 'd6d33e',
     };
 
     return (
-        <g filter="url(#shadow)">
-            <text style={scoreStyle} x='300' y='80'>
+        <g >
+            <text style={scoreStyle} x='400' y='50'>
                 {props.score}
             </text>
         </g> 
