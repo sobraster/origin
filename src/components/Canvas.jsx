@@ -4,6 +4,9 @@ import Sky from './Sky';
 import Ground from './Ground';
 import CannonBase from './CannonBase';
 import CannonPipe from './CannonPipe';
+import CannonBall from './CannonBall';
+import CurrentScore from './CurrenScore';
+
 
 const Canvas = (props) => {
   const viewBox = [window.innerWidth / -2, 100 - window.innerHeight,
@@ -15,10 +18,17 @@ const Canvas = (props) => {
       onMouseMove={props.trackMouse}
       viewBox = {viewBox}
     >
+      <defs>
+        <filter>
+          <feDropShadow dx="1" dy="1" stdDeviation="2" />  
+        </filter>
+      </defs>
       <Sky />
       <Ground />
       <CannonPipe rotation={props.angle}/>
       <CannonBase />
+      <CurrentScore score={15}/>
+      <CannonBall position={{x: 0, y: -100}}/>
     </svg>
   );
 };
